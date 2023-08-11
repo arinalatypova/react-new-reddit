@@ -21,6 +21,22 @@ module.exports = {
         test: /\.[tj]sx?$/, // регулярное выражение, в котором описано какие файлы с помощью лодера будут обработаны
         use: ['ts-loader'],
       },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
+              onlyLocals: true,
+            },
+          },
+          'less-loader',
+        ],
+      },
     ],
   },
   optimization: {
