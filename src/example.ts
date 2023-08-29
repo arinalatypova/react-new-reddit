@@ -162,3 +162,5 @@ if (typeof un === 'string') {
 function neverFn(): never {
   throw new Error('my exception');
 }
+
+// Класс
