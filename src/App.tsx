@@ -5,6 +5,8 @@ import { Layout } from './shared/Layout';
 import { Header } from './shared/Header';
 import { Content } from './shared/Content';
 import { CardsList } from './shared/CardsList';
+import { Dropdown } from './shared/Dropdown';
+import { GenericList } from './shared/GenericList';
 
 function AppComponent() {
   return (
@@ -12,6 +14,15 @@ function AppComponent() {
       <Header />
       <Content>
         <CardsList />
+        <div style={{ padding: 20 }}>
+          <br />
+          <Dropdown
+            onClose={() => console.log('closed')}
+            onOpen={() => console.log('opened')}
+            button={<button>Test</button>}>
+            <CardsList />
+          </Dropdown>
+        </div>
       </Content>
     </Layout>
   );
