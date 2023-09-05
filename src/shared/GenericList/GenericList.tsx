@@ -9,6 +9,7 @@ interface IItem {
   className?: string;
   As?: 'a' | 'li' | 'button' | 'div';
   href?: string;
+  svg?: React.ReactNode;
 }
 
 interface IGenericListProps {
