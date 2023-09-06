@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './menuitemslist.css';
 import { GenericList } from '../../../../GenericList';
 import { BlockIcon, CommentIcon, SaveIcon, ShareIcon, WarningIcon } from '../../../../icons';
+import { Text } from '../../../../Text';
 
 interface IMenuItemsListProps {
   postId: string;
@@ -14,7 +15,7 @@ export function MenuItemsList({ postId }: IMenuItemsListProps) {
         className={`${styles.menuItem} ${styles.desktopItem}`}
         onClick={() => console.log(postId)}>
         <CommentIcon />
-        <span>Комментарии</span>
+        <Text size={14}>Комментарии</Text>
       </li>
 
       <div className={`${styles.divider} ${styles.desktopItem}`}></div>
@@ -23,14 +24,16 @@ export function MenuItemsList({ postId }: IMenuItemsListProps) {
         className={`${styles.menuItem} ${styles.desktopItem}`}
         onClick={() => console.log(postId)}>
         <ShareIcon />
-        <span>Поделиться</span>
+        <Text size={14}>Поделиться</Text>
       </li>
 
       <div className={`${styles.divider} ${styles.desktopItem}`}></div>
 
       <li className={styles.menuItem} onClick={() => console.log(postId)}>
-        <BlockIcon />
-        <span>Скрыть</span>
+        <BlockIcon size={14} />
+        <Text size={14} mobileSize={12}>
+          Скрыть
+        </Text>
       </li>
 
       <div className={styles.divider}></div>
@@ -39,14 +42,16 @@ export function MenuItemsList({ postId }: IMenuItemsListProps) {
         className={`${styles.menuItem} ${styles.desktopItem}`}
         onClick={() => console.log(postId)}>
         <SaveIcon />
-        <span>Сохранить</span>
+        <Text size={14}>Сохранить</Text>
       </li>
 
       <div className={`${styles.divider} ${styles.desktopItem}`}></div>
 
       <li className={styles.menuItem} onClick={() => console.log(postId)}>
         <WarningIcon />
-        <span>Пожаловаться</span>
+        <Text size={14} mobileSize={12}>
+          Пожаловаться
+        </Text>
       </li>
     </ul>
   );

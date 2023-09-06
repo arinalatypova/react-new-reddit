@@ -14,15 +14,6 @@ function AppComponent() {
       <Header />
       <Content>
         <CardsList />
-        <br />
-        <Text size={20} mobileSize={28} color={EColor.green}>
-          Label 1
-        </Text>
-        <Text size={20}>Label 2</Text>
-        <Break size={8} inline />
-        <Text size={20} mobileSize={16}>
-          Label 3
-        </Text>
       </Content>
     </Layout>
   );
