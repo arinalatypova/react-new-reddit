@@ -1,0 +1,8 @@
+.publishedLabel {
+  display: none;
+}
+
+.createdAt,
+.createdAt span {
+  color: var(--grey99);
+}

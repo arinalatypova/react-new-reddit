@@ -2,7 +2,13 @@ import React from 'react';
 import styles from './title.css';
 import { Post } from '../../../../Post';
 
-export function Title() {
+export interface ITitleProps {
+  id: string;
+  subreddit?: string;
+  title: string;
+}
+
+export function Title({ id, subreddit, title }: ITitleProps) {
   const [isModalOpened, setIsModalOpened] = React.useState(false);
 
   return (
@@ -13,7 +19,9 @@ export function Title() {
         onClick={() => {
           setIsModalOpened(true);
         }}>
-        Следует отметить, что новая модель организационной деятельности...
+        {title ||
+          `Следует отметить, что новая модель организационной деятельности 
+          Следует отметить, что новая модель организационной деятельности`}
       </a>
 
       {isModalOpened && (

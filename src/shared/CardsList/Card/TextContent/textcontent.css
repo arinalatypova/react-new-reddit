@@ -15,15 +15,6 @@
   line-height: 12px;
 }
 
-.publishedLabel {
-  display: none;
-}
-
-.createdAt,
-.createdAt span {
-  color: var(--grey99);
-}
-
 @media all and (min-width: 1024px) {
   .textContent {
     flex-basis: 540px;
