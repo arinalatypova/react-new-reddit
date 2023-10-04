@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './menu.css';
 import { Dropdown } from '../../../Dropdown';
-import { MenuItemsList } from './MenuItemsList';
+import { IMenuItemsListProps, MenuItemsList } from './MenuItemsList';
 import { MenuIcon } from '../../../icons';
 
-export function Menu() {
+export interface IMenuProps extends IMenuItemsListProps {}
+
+export function Menu({ id }: IMenuProps) {
   return (
     <div className={styles.menu}>
       <Dropdown
@@ -14,7 +16,7 @@ export function Menu() {
           </button>
         }>
         <div className={styles.dropdown}>
-          <MenuItemsList postId="1234" />
+          <MenuItemsList id="1234" />
           <button className={`${styles.closeButton} ${styles.desktopButton}`}>Закрыть</button>
         </div>
       </Dropdown>

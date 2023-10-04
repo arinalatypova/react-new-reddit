@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from './post.css';
-import { CommentForm } from '../CommentForm';
+import { CommentFormContainer } from '../CommentFormContainer';
 
 interface IPost {
   onClose?: () => void;
@@ -57,7 +57,7 @@ export function Post(props: IPost) {
           хотя само их существование приносит несомненную пользу обществу.
         </p>
       </div>
-      <CommentForm />
+      <CommentFormContainer />
     </div>,
     node,
   );

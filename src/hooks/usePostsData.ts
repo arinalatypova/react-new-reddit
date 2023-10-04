@@ -3,7 +3,7 @@ import axios from 'axios';
 import { tokenContext } from '../shared/context/tokenContext';
 
 export function usePostData() {
-  const [postData, setPostData] = React.useState({});
+  const [postData, setPostData] = React.useState([]);
   const token = React.useContext(tokenContext);
 
   React.useEffect(() => {
@@ -13,11 +13,12 @@ export function usePostData() {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {
-          setPostData(res.data.data.children);
-          console.log(postData);
+          const data = res.data.data.children;
+          setPostData(data);
+          console.log(data);
         })
         .catch(console.log);
     }
   }, [token]);
-  return [postData];
+  return postData;
 }

@@ -2,15 +2,17 @@ import React from 'react';
 import styles from './controls.css';
 import { ShareButton } from './ShareButton';
 import { SaveButton } from './SaveButton';
-import { CommentButton } from './CommentButton';
-import { KarmaCounter } from './KarmaCounter';
+import { CommentButton, ICommentButtonProps } from './CommentButton';
+import { IKarmaCounterProps, KarmaCounter } from './KarmaCounter';
 
-export function Controls() {
+export interface IControlsProps extends IKarmaCounterProps, ICommentButtonProps {}
+
+export function Controls({ comments, score }: IControlsProps) {
   return (
     <div className={styles.controls}>
-      <KarmaCounter />
+      <KarmaCounter score={score} />
 
-      <CommentButton />
+      <CommentButton comments={comments} />
 
       <div className={styles.actions}>
         <ShareButton />
